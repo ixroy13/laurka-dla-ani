@@ -124,4 +124,9 @@ a {
   text-decoration: none;
   color: #000;
   font-weight: 600;
+  position: absolute;
+  z-index: 100000;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
 }
