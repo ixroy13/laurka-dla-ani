@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Comfortaa;
+}
+
+body {
+    overflow: hidden;
+}
+
+#main {
+  min-height: 100svh;
+  background-image: url(./background.jpg);
+  background-size: cover;
+}
+
+.welcome {
+  padding: 1.5rem;
+  overflow: hidden;
+  position: absolute;
+  width: 100vw;
+}
+
+.welcome h1 {
+  font-size: clamp(5vw, 6rem, 10vw);
+  margin-bottom: 2rem;
+  transition: 0.3s;
+  text-align: center;
+  color: rgb(255, 149, 167);
+}
+
+.welcome button {
+  width: clamp(350px, 90vw, 500px);
+  height: 60px;
+  background: #ffffffd0;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 1px 0px 10px 0 #656565;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.welcome.slide button {
+  translate: 100vw;
+}
+
+.welcome.slide h1 {
+  color: transparent;
+  visibility: hidden;
+}
+
+.countdown {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.8rem;
+}
+
+h3 {
+  font-size: clamp(1rem, 2.5vw, 2.5rem);
+  transition: 0.3s;
+}
+
+.welcome.slide h3 {
+  color: transparent;
+  visibility: hidden;
+}
+
+p {
+  font-weight: 700;
+  font-size: clamp(1rem, 2.5vw, 2.5rem);
+  transition: 0.3s;
+}
+
+.welcome.slide p {
+  color: transparent;
+  visibility: hidden;
+}
+
+.img {
+  /* visibility: hidden; */
+  width: 100vw;
+  height: 0vh;
+  display: grid;
+  place-items: center;
+}
+
+.img.show {
+  height: 100vh;
+}
+
+img {
+  display: none;
+  width: clamp(300px, 20vw, 600px);
+}
+
+.ice.show {
+  display: block;
+}
+
+.sing.show {
+  display: block;
+}
+
+.tt.show {
+  display: block;
+}
+
+a {
+  position: absolute;
+  bottom: 7%;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
