@@ -20,10 +20,6 @@ document.querySelector("#three").addEventListener("click", () => {
   document.querySelector(".tt").classList.add("show");
 });
 
-if (welcomeSection.classList.contains("slide")) {
-  console.log("XD");
-}
-
 const span = document.querySelector(".calc");
 
 function timeUpdate() {
