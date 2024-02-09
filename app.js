@@ -27,17 +27,9 @@ function timeUpdate() {
   let birthday = new Date("2008-02-04T09:00:00");
   let timeDifference = date - birthday;
   let years = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
-  let months = Math.floor(
-    (timeDifference % (365.25 * 24 * 60 * 60 * 1000)) /
-      (30.44 * 24 * 60 * 60 * 1000)
-  );
-  let days = Math.floor(
-    (timeDifference % (365.25 * 24 * 60 * 60 * 1000)) /
-      (12 * 24 * 60 * 60 * 1000)
-  );
-  let hours = Math.floor(
-    (timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
-  );
+  let months = Math.floor((timeDifference % (365.25 * 24 * 60 * 60 * 1000)) /(30.44 * 24 * 60 * 60 * 1000));
+  let days = Math.floor((timeDifference % (365.25 * 24 * 60 * 60 * 1000)) /(24 * 60 * 60 * 1000));
+  let hours = Math.floor((timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
   let minutes = Math.floor((timeDifference % (60 * 60 * 1000)) / (60 * 1000));
   let seconds = Math.floor((timeDifference % (60 * 1000)) / 1000);
   document.querySelector("p.years").innerText = `${years} lat`;
@@ -46,6 +38,7 @@ function timeUpdate() {
   document.querySelector("p.hours").innerText = `${hours} godzin`;
   document.querySelector("p.minutes").innerText = `${minutes} minut`;
   document.querySelector("p.seconds").innerText = `${seconds} sekund`;
+  // console.log(days)
 }
 
 setInterval(timeUpdate, 500);
