@@ -12,6 +12,18 @@ buttons.forEach((button) => {
   });
 });
 
+buttons[0].addEventListener("click", () => {
+  document.querySelector("img.ice").classList.add("show")
+})
+
+buttons[1].addEventListener("click", () => {
+  document.querySelector("img.sing").classList.add("show");
+});
+
+buttons[2].addEventListener("click", () => {
+  document.querySelector("img.tt").classList.add("show");
+});
+
 function timeUpdate() {
   let date = new Date();
   // let date = new Date("2024-02-05T09:00:00")
