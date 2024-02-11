@@ -142,12 +142,45 @@ a {
   color: #fff;
   translate: -6px 0;
   transition: 0.3s;
+  animation: star 4s infinite;
 }
 
-.fa-star:hover {
-  rotate: 215deg;
+/* ipad poziomo */
+@media (min-width: 1180px ) and (max-width: 1300px){
+  .btns {
+    display: flex;
+  }
+  .buttons {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .countdown {
+    width: 50%;
+    margin: 0;
+  }
 }
 
-.fa-star:active {
-  rotate: 215deg;
+@keyframes star {
+  0%, 25% {
+        rotate: 0deg;
+    }
+
+    5% {
+        rotate: 30deg;
+        }
+
+    10% {
+        rotate: -30deg;
+    }
+
+    15% {
+        rotate: 20deg;
+        }
+
+    20% {
+        rotate: -15deg;
+    }
+
 }
