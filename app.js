@@ -26,12 +26,12 @@ buttons[2].addEventListener("click", () => {
 
 function timeUpdate() {
   let date = new Date();
-  // let date = new Date("2024-02-05T09:00:00")
+  // let date = new Date("2012-02-11T09:00:00")
   let birthday = new Date("2008-02-04T09:00:00");
   let timeDifference = date - birthday;
   let years = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
   let months = Math.floor((timeDifference % (365.25 * 24 * 60 * 60 * 1000)) /(30.44 * 24 * 60 * 60 * 1000));
-  let days = Math.floor((timeDifference % (30.44 * 24 * 60 * 60 * 1000)) /(24 * 60 * 60 * 1000));
+  let days = Math.floor((timeDifference % (30.435 * 24 * 60 * 60 * 1000)) /(24 * 60 * 60 * 1000));
   let hours = Math.floor((timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
   let minutes = Math.floor((timeDifference % (60 * 60 * 1000)) / (60 * 1000));
   let seconds = Math.floor((timeDifference % (60 * 1000)) / 1000);
