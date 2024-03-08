@@ -26,22 +26,25 @@ buttons[2].addEventListener("click", () => {
 
 function timeUpdate() {
   let date = new Date();
-  // let date = new Date("2024-03-05T09:01:01");
+  // let date = new Date("2024-04-05T09:01:01");
+  // let birthday = new Date("2023-03-07T09:00:00");
   let birthday = new Date("2008-02-04T09:00:00");
-  let timeDifference = date - birthday;
-  let years = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
-  let months = Math.floor(
-    (timeDifference % (365.25 * 24 * 60 * 60 * 1000)) /
-      (30 * 24 * 60 * 60 * 1000)
-  );
-  let days = Math.floor(
-    (timeDifference % (30.435 * 24 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)
-  );
-  let hours = Math.floor(
-    (timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
-  );
-  let minutes = Math.floor((timeDifference % (60 * 60 * 1000)) / (60 * 1000));
-  let seconds = Math.floor((timeDifference % (60 * 1000)) / 1000);
+  let years = date.getFullYear() - birthday.getFullYear();
+  let months = date.getMonth() - birthday.getMonth();
+  let days = date.getDay() - birthday.getDay();
+  let hours = date.getHours() - birthday.getHours();
+  let minutes = date.getMinutes() - birthday.getMinutes();
+  let seconds = date.getSeconds() - birthday.getSeconds();
+
+  if (days < 0) {
+    days += 27;
+    months--;
+  }
+
+  if (months < 0) {
+    months += 12;
+    years--;
+  }
 
   months == 0
     ? (monthParagraph.style.display = "none")
@@ -127,6 +130,10 @@ function timeUpdate() {
   let minutesProgress = Math.ceil((minutes / 60) * 100);
   let hoursProgress = Math.ceil((hours / 24) * 100);
   let daysProgress = Math.ceil((days / 30.25) * 100);
+
+  document.querySelector(".progres-circle div").style.width = `${
+    secondsProgress / 5
+  }px`;
 }
 
 setInterval(timeUpdate, 300);
