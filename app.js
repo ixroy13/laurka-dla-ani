@@ -31,7 +31,7 @@ function timeUpdate() {
   let birthday = new Date("2008-02-04T09:00:00");
   let years = date.getFullYear() - birthday.getFullYear();
   let months = date.getMonth() - birthday.getMonth();
-  let days = date.getDay() - birthday.getDay();
+  let days = date.getDate() - birthday.getDate();
   let hours = date.getHours() - birthday.getHours();
   let minutes = date.getMinutes() - birthday.getMinutes();
   let seconds = date.getSeconds() - birthday.getSeconds();
@@ -44,6 +44,11 @@ function timeUpdate() {
   if (months < 0) {
     months += 12;
     years--;
+  }
+
+  if (hours < 0) {
+    hours += 24;
+    days--;
   }
 
   months == 0
@@ -119,12 +124,8 @@ function timeUpdate() {
   document.querySelector("p.months").innerText = `${months + " " + monthWord}`;
   document.querySelector("p.days").innerText = `${days + " " + dayWord}`;
   document.querySelector("p.hours").innerText = `${hours + " " + hourWord}`;
-  document.querySelector("p.minutes").innerText = `${
-    minutes + " " + minutesWord
-  }`;
-  document.querySelector("p.seconds").innerText = `${
-    seconds == 0 ? "" : seconds + " " + secondWord
-  } temu`;
+  document.querySelector("p.minutes").innerText = `${minutes + " " + minutesWord}`;
+  document.querySelector("p.seconds").innerText = `${seconds == 0 ? "" : seconds + " " + secondWord} temu`;
 
   let secondsProgress = Math.ceil((seconds / 60) * 100);
   let minutesProgress = Math.ceil((minutes / 60) * 100);
